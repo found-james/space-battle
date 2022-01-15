@@ -5,33 +5,38 @@ class Ship {
         this.firepower = firepower;
         this.accuracy = accuracy;
     }
-    attack(opponent) {
+    attack(opp) {
         if (this.accuracy > Math.random()){
-        opponent.hull -= this.firepower;
+        opp.hull -= this.firepower;
         } else {
             console.log("you missed");
         }
     }
     retreat() {
-        
+        //press button to retreat
+        //restart game
     }
 }
 
-const enemyShips = [];
+class EnemyShip {
+    constructor(name){
+        this.name = name;
+        this.hull = Math.floor(Math.random()*4) + 3;
+        this.firepower = Math.floor(Math.random()*3) + 2;
+        this.accuracy = Math.random() * .2 + .6;
+    }
 
-for(let i = 1; i < 7; i++) {
-    const enemyShip = new Ship(`enemyShip ${i}`, Math.floor(Math.random()*4) + 3, Math.floor(Math.random()*3) + 2, Math.random() * .2 + .6)
-    enemyShips.push(enemyShip);
+    attack(opp){
+        if (this.accuracy > Math.random()){
+            opp.hull -= this.firepower;
+        } else {
+            //print msg you missed
+            //prompt player to attack or retreat
+        }
+
+    }
 }
 
 const ussAssembly = new Ship("USS Assembly", 20, 5, 0.7);
-
-// console.log("This is the firepower: ", ussAssembly.firepower);
-// console.log(enemyShips[0]);
-
-// ussAssembly.attack(enemyShips[0]);
-// // enemyShips[0].attack(ussAssembly);
-
-// console.log(enemyShips[0]);
-console.log(enemyShips);
+const EnemyShipArr = [new EnemyShip("alpha"), new EnemyShip("beta"), new EnemyShip("gamma"), new EnemyShip("delta"), new EnemyShip("eta"), new EnemyShip("zeta")];
 
