@@ -38,5 +38,10 @@ class EnemyShip {
 }
 
 const ussAssembly = new Ship("USS Assembly", 20, 5, 0.7);
-const EnemyShipArr = [new EnemyShip("alpha"), new EnemyShip("beta"), new EnemyShip("gamma"), new EnemyShip("delta"), new EnemyShip("eta"), new EnemyShip("zeta")];
+const enemyShipArr = [new EnemyShip("alpha"), new EnemyShip("beta"), new EnemyShip("gamma"), new EnemyShip("delta"), new EnemyShip("eta"), new EnemyShip("zeta")];
 
+const startButton = document.querySelector("button");
+
+
+// startButton.addEventListener("click", (e) => { 
+//     ussAssembly.attack(enemyShipArr[enemyShipArr.length -1]);
