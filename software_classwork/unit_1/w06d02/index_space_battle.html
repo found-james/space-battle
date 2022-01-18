@@ -14,15 +14,24 @@
         <h1>Space Battle</h1>
     </header>
 
+    <nav id="rules-of-game">
+        <ul>
+            <li>You win when all ships are destroyed</li>
+            <li>After each attack enemyship will make an attempt to attack back</li>
+            <li>Once you engage an attack you can only end the sequence once EnemyShip is destroyed</li>
+            <li>Retreat option only appears after an EnemyShip has been destroyed</li>
+        </ul>
+    </nav>
     <div class = "all-divs">
         
     <section class="enemy-ships">
-        <div id="enemy-one"></div>
-        <div id="enemy-two"></div>
-        <div id="enemy-three"></div>
-        <div id="enemy-four"></div>
-        <div id="enemy-five"></div>
-        <div id="enemy-six"></div>
+        
+        <div class="enemies"></div>
+        <div class="enemies"></div>
+        <div class="enemies"></div>
+        <div class="enemies"></div>
+        <div class="enemies"></div>
+        <div class="enemies"></div>
 
     </section>
 
@@ -30,17 +39,26 @@
         <div class="uss-assembly"></div>
     </aside>
 
+    </div>
+
     <article class ="text-buttons">
-        <div class="text"> 
-            <p></p>
+        
+        <div class="text">
+            
        </div>
         
     <div class="buttons">
-        <button>Start</button>
+        <button id ="start">Start</button>
         <button id ="attack">Attack</button>
-        <button>Retreat</button>    
+        <button id ="retaliate">Retaliate</button>
+        <button id ="retreat">Retreat</button>
+            
     </div>
+
+    </article>
+
 
     <script src ="script_space_battle.js"></script>
 </body>
 </html>
+
