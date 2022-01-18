@@ -142,7 +142,7 @@ const deltaShip = new EnemyShip("DeltaShip");
 const epsilonShip = new EnemyShip("epsilonShip");
 const etaShip = new EnemyShip("EtaShip");
 const enemyShipArr = [alphaShip, betaShip, gammaShip, deltaShip, epsilonShip, etaShip];
-const upComingEnemyShip = enemyShipArr[enemyShipArr.length -2];
+
 //buttons
 const startButton = document.querySelector("#start");
 const attackButton = document.querySelector("#attack");
