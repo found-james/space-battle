@@ -96,58 +96,42 @@ class EnemyShip {
         }
     }
 //functions  
-const startBattle = () => {
-    ussAssembly.attack(enemyShipArr[enemyShipArr.length -1]);
-}
-const appearAttackButton = () => {
-    attackButton.style.display = "inline";
-}
-
-const appearRetreatButton = () => {
-    retreatButton.style.display ="inline";
-}
-
-const appearRetaliateButton = () => {
-    retaliateButton.style.display ="inline";
-}
-
-const disapearRetaliateButton = () => {
-    retaliateButton.style.display = "none";
-}
-
-const disappearAttackButton = () => {
-    attackButton.style.display = "none";
-}
-
-const disappearRetreatButton = () => {
-    retreatButton.style.display ="none";
-}
+const startBattle = () => ussAssembly.attack(enemyShipArr[enemyShipArr.length -1]);
+const appearAttackButton = () => attackButton.style.display = "inline";
+const appearRetreatButton = () => retreatButton.style.display ="inline";
+const appearRetaliateButton = () => retaliateButton.style.display ="inline";
+const disapearRetaliateButton = () => retaliateButton.style.display = "none";
+const disappearAttackButton = () => attackButton.style.display = "none";
+const disappearRetreatButton = () => retreatButton.style.display ="none";
 
 const removeEnemyShip = () => {
     const enemyShip = document.querySelector(".enemies");
+    if (!enemyShip){
+        throw new Error ("All ships have been destoryed");
+    } else {
     enemyShip.remove();
+    }
 }
 
 const removeUssAssembly = () => {
     const ussAssembly = document.querySelector("uss-assembly");
     ussAssembly.remove();
 }
-
 //"actors"
 const ussAssembly = new Ship("USS Assembly", 20, 10, 0.7);
 const alphaShip = new EnemyShip("AlphaShip");
 const betaShip = new EnemyShip("BetaShip");
 const gammaShip = new EnemyShip("GammaShip");
 const deltaShip = new EnemyShip("DeltaShip");
-const epsilonShip = new EnemyShip("epsilonShip");
+const epsilonShip = new EnemyShip("EpsilonShip");
 const etaShip = new EnemyShip("EtaShip");
-const enemyShipArr = [alphaShip, betaShip, gammaShip, deltaShip, epsilonShip, etaShip];
 
+const enemyShipArr = [alphaShip, betaShip, gammaShip, deltaShip, epsilonShip, etaShip];
 //buttons
-const startButton = document.querySelector("#start");
-const attackButton = document.querySelector("#attack");
-const retaliateButton = document.querySelector("#retaliate");
-const retreatButton = document.querySelector("#retreat");
+const startButton = document.querySelector(".buttons button:nth-of-type(1)");
+const attackButton = document.querySelector(".buttons button:nth-of-type(2)");
+const retaliateButton = document.querySelector(".buttons button:nth-of-type(3)");
+const retreatButton = document.querySelector(".buttons button:nth-of-type(4)");
 //styles for buttons
 attackButton.style.display = "none";
 retaliateButton.style.display = "none";
@@ -161,15 +145,7 @@ startButton.addEventListener("click", () =>{
     startBattle();
 });
 
-attackButton.addEventListener("click", ()=>{
-   startBattle();    
-});
-
-retaliateButton.addEventListener("click", () => {
-    startBattle();
-});
-
-retreatButton.addEventListener("click", () => {
-   ussAssembly.retreat();
-});
+attackButton.addEventListener("click", ()=> startBattle());
+retaliateButton.addEventListener("click", () => startBattle());
+retreatButton.addEventListener("click", () => ussAssembly.retreat());
 
