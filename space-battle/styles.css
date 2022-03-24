@@ -5,11 +5,20 @@ body{
     background-color: #B4B8AB;
 }
 
+header {
+
+    width: 80%;
+    min-width: 700px;
+    position: relative;
+    left: 10%;
+    top: 20%;
+}
 
 h1 {
-    position: relative;
-    left: 35%;
-    }
+    width: fit;
+    text-align: center;
+    
+}
 
 nav {
     width: 80%;
@@ -25,6 +34,7 @@ nav > ul {
 .all-divs{
     position: relative;
     left: 10%;
+    top: 20%;
     display: flex;
     border: solid 2px black;
     background-color: #153243;
@@ -77,10 +87,10 @@ article{
 
 }
 
-button {
-    width: 100px;
-    height: 100px;
-    font-size: 24px;
+.text-buttons {
+    position: relative;
+    min-width: 700px;
+    top: 20%;
 }
 
     
